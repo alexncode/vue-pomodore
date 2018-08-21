@@ -1,7 +1,7 @@
 <template>
   <div id='app'>
     <div class="container-grid">
-      <button class="settings_btn" @click='isSettingsShow = true'>|||</button>
+      <button class="settings_btn" @click='isSettingsShow = true'><img src="./assets/baseline-menu-24px.svg" alt="menu icon"></button>
       <Pomidore v-for="n in 3" v-bind:key='n' v-bind:timer='whatOrder(n-2)' />
       <div class='form'>
         <button class='start_btn' @click='startTimer'>Start Timer</button>
@@ -20,9 +20,9 @@ import nth from "lodash/nth";
 
 // Timers to initialize
 const timers = {
-  pomidore: 25,
-  long: 30,
-  short: 5
+  pomidore: 25 * 60,
+  long: 30 * 60,
+  short: 5 * 60
 };
 
 export default {
@@ -200,9 +200,14 @@ body {
   grid-column: var(--settings-column);
   margin-right: 5px;
   margin-top: 5px;
-  padding: 3px 5px 4px 5px;
   border: 0;
   border-radius: 3px;
   background-color: $settings-btn-bg;
+  img {
+    padding-top: 4px;
+  }
+}
+.settings_btn:hover {
+  background-color: lighten($color: $settings-btn-bg, $amount: 10%);
 }
 </style>
