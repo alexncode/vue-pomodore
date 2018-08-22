@@ -1,12 +1,12 @@
 <template>
   <div id='app'>
-    <div class="container-grid">
-      <button class="settings_btn" @click='isSettingsShow = true'><img src="./assets/baseline-menu-24px.svg" alt="menu icon"></button>
+      <div class="container-grid">
+      <img class="settings_btn" @click='isSettingsShow = true' src="./assets/baseline-menu-24px.svg" alt="menu icon">
       <Pomidore v-for="n in 3" v-bind:key='n' v-bind:timer='whatOrder(n-2)' />
       <div class='form'>
-        <button class='start_btn' @click='startTimer'>Start Timer</button>
-        <button class='stop_btn' @click='stopTimer'>Stop Timer</button>
-        <button class='clear_btn' @click='clearTimer'>Clear Timer</button>
+        <img class='btn start_btn' @click='startTimer' src="./assets/baseline-play_arrow-24px.svg" alt="play">
+        <img class='btn stop_btn' @click='stopTimer' src="./assets/baseline-stop-24px.svg" alt="stop">
+        <img class='btn clear_btn' @click='clearTimer' src="./assets/baseline-replay-24px.svg" alt="reset">
       </div>
     </div>
     <Settings v-if='isSettingsShow' v-on:close-sett='isSettingsShow = false' v-bind:allTheSettings='allSettings'></Settings>
@@ -151,15 +151,6 @@ $settings-btn-bg: darkgray;
   --settings-column: 1 / 4;
 }
 
-@media (max-width: 580px) {
-  :root {
-    --grid-columns: 1fr;
-    --grid-rows: auto-fit 1fr 1fr 1fr 0.5fr;
-    --form-column: 1;
-    --settings-column: 1;
-  }
-}
-
 body {
   margin: 0;
   background-color: $body-bg;
@@ -173,24 +164,31 @@ body {
   display: grid;
   grid-template-columns: var(--grid-columns);
   grid-template-rows: var(--grid-rows);
-  grid-gap: 10px;
+  // grid-gap: 10px;
+  padding: 10% 3% 6%;
+  background-image: url("./assets/digital_clock.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0 1%;
 }
 
 .form {
-  grid-column: var(--form-column);
-  button {
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  // grid-column: var(--form-column);
+  grid-column: 2;
+  .btn {
     border-radius: 5px;
-    margin-right: 1rem;
+    margin: 0 1.5vw 0 1.5vw;
     border: 0;
+    width: 3vw;
   }
-  button.start_btn {
+  .btn.start_btn {
     background-color: #64c264;
   }
-  button.stop_btn {
+  .btn.stop_btn {
     background-color: #e35c5c;
   }
-  button.clear_btn {
+  .btn.clear_btn {
     background-color: #cece5e;
   }
 }
@@ -198,8 +196,9 @@ body {
 .settings_btn {
   justify-self: end;
   grid-column: var(--settings-column);
-  margin-right: 5px;
-  margin-top: 5px;
+  margin-right: 1vw;
+  margin-top: 10px;
+  width: 3vw;
   border: 0;
   border-radius: 3px;
   background-color: $settings-btn-bg;

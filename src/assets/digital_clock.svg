@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 563">
+<defs>
+<style>.cls-1{isolation:isolate;}.cls-2{fill:gray;}.cls-3,.cls-6{fill:none;}.cls-3,.cls-4,.cls-5{stroke:#000;}.cls-3,.cls-4,.cls-5,.cls-6{stroke-miterlimit:10;}.cls-4{fill:#2d2828;}.cls-5{fill:#bfbfbf;stroke-width:0.25px;}.cls-6{stroke:#4d4d4d;stroke-width:3px;}.cls-7{opacity:0.75;mix-blend-mode:screen;}.cls-8{font-size:194.05px;fill:#0e9030;}.cls-8,.cls-9{font-family:MyriadPro-Regular, Myriad Pro;}.cls-9{font-size:89.16px;fill:#d02200;}</style>
+</defs>
+<title>digital_clock</title>
+<g class="cls-1"><g id="Layer_2" data-name="Layer 2">
+<path class="cls-2" d="M16.5,121.4c-5.5,0-5.76-1.49-.57-3.32L322.64,9.83A70.14,70.14,0,0,1,342.07,6.5h1282.3a61,61,0,0,1,19.26,3.78l258.11,105.23c5.09,2.07,4.76,3.78-.74,3.78Z"/>
+<path class="cls-3" d="M16.5,121.4c-5.5,0-5.76-1.49-.57-3.32L322.64,9.83A70.14,70.14,0,0,1,342.07,6.5h1282.3a61,61,0,0,1,19.26,3.78l258.11,105.23c5.09,2.07,4.76,3.78-.74,3.78Z"/>
+<rect class="cls-2" x="6.5" y="115.02" width="1904.5" height="436.23" rx="10" ry="10"/>
+<rect class="cls-3" x="6.5" y="115.02" width="1904.5" height="436.23" rx="10" ry="10"/>
+<rect class="cls-4" x="46.93" y="159.71" width="1813" height="351.11"/>
+<polyline class="cls-5" points="52.25 159.71 51.19 506.56 1855.67 506.56 1855.67 159.71 1859.93 159.71 1859.93 510.82 46.93 510.82 46.93 159.71 52.25 159.71 52.25 159.71 52.25 159.71"/>
+<line class="cls-6" x1="392.72" y1="42.67" x2="752.34" y2="42.67"/>
+<line class="cls-6" x1="318.24" y1="66.08" x2="677.86" y2="66.08"/>
+<line class="cls-6" x1="235.25" y1="89.49" x2="594.87" y2="89.49"/>
+<line class="cls-6" x1="1175.8" y1="42.67" x2="1535.42" y2="42.67"/>
+<line class="cls-6" x1="1260.92" y1="63.95" x2="1620.54" y2="63.95"/>
+<line class="cls-6" x1="1356.67" y1="89.49" x2="1716.29" y2="89.49"/>
+</g></g></svg>

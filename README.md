@@ -1,5 +1,5 @@
 # vue-pomidore
-A simple implementation of Pomodoro Technique timers made with Vue
+A simple implementation of Pomodoro Technique timers made with Vue.js
 
 ## Project setup
 ```

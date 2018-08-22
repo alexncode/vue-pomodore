@@ -20,8 +20,9 @@ export default {
   text-shadow: 0 0 8px rgba(236, 60, 47, 0.9);
   cursor: pointer;
   span {
-    font-family: "Digital-7", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 5rem;
+    font-family: "Digital-7 Mono", "Segoe UI", Tahoma, Geneva, Verdana,
+      sans-serif;
+    font-size: 10vw;
   }
 }
 
