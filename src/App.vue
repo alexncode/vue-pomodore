@@ -1,6 +1,6 @@
 <template>
   <div id='app'>
-      <div class="container-grid">
+    <div class="container-grid">
       <img class="settings_btn" @click='isSettingsShow = true' src="./assets/baseline-menu-24px.svg" alt="menu icon">
       <Pomidore v-for="n in 3" v-bind:key='n' v-bind:timer='whatOrder(n-2)' />
       <div class='form'>
@@ -73,8 +73,8 @@ export default {
     //Aviable settings sended to Settings component
     this.allSettings = {
       pomidor: this.pomTimer,
-      long: this.shortBreak,
-      short: this.longBreak
+      long: this.longBreak,
+      short: this.shortBreak
     };
   },
   mounted: function() {

@@ -15,6 +15,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang='scss' scoped>
+@font-face {
+  font-family: "Digital-7 Mono";
+  src: url("../assets/digital-7 (mono).ttf");
+}
+
 .pomidor {
   color: rgb(236, 60, 47);
   text-shadow: 0 0 8px rgba(236, 60, 47, 0.9);
