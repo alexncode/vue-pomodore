@@ -3,6 +3,7 @@
     <div class="container-grid">
       <img class="settings_btn" @click='isSettingsShow = true' src="./assets/baseline-menu-24px.svg" alt="menu icon">
       <Pomidore v-for="n in 3" v-bind:key='n' v-bind:timer='whatOrder(n-2)' />
+      <div class="statistic">Completed pomodoras: <span>{{ numberOfPomodoras }}</span></div>
       <div class='form'>
         <img class='btn start_btn' @click='startTimer' src="./assets/baseline-play_arrow-24px.svg" alt="play">
         <img class='btn stop_btn' @click='stopTimer' src="./assets/baseline-stop-24px.svg" alt="stop">
@@ -53,6 +54,7 @@ export default {
       },
       timer: null,
       currentTimerIndex: 0,
+      numberOfPomodoras: 0,
       isSettingsShow: false,
       isRunning: false
     };
@@ -78,7 +80,7 @@ export default {
     };
   },
   mounted: function() {
-    // Ask browser for permission to show notifications
+    // Ask browser for permission to show notifications. Bad practice add button to toggle notifications!
     if (Notification.permission !== "granted") {
       Notification.requestPermission();
     }
@@ -97,14 +99,9 @@ export default {
         if (curTimer.time > 0) {
           curTimer.time--;
         } else {
-          //Reset current timer
-          curTimer.time = curTimer.range;
-          curTimer.isActive = false;
-          //Move to next timer
-          if (vm.currentTimerIndex < vm.pattern.length - 1) {
-            vm.currentTimerIndex++;
-          } else {
-            vm.currentTimerIndex = 0;
+          vm.nextTimer();
+          if (curTimer === vm.pomTimer) {
+            vm.numberOfPomodoras++;
           }
           // Show notification
           vm.notify("Pomodoro", vm.pattern[vm.currentTimerIndex].message);
@@ -120,6 +117,18 @@ export default {
       this.pattern[this.currentTimerIndex].time = this.pattern[
         this.currentTimerIndex
       ].range;
+    },
+    nextTimer: function() {
+      const curTimer = this.pattern[this.currentTimerIndex];
+      //Reset current timer
+      curTimer.time = curTimer.range;
+      curTimer.isActive = false;
+      //Move to next timer
+      if (this.currentTimerIndex < this.pattern.length - 1) {
+        this.currentTimerIndex++;
+      } else {
+        this.currentTimerIndex = 0;
+      }
     },
     notify: function(title, message) {
       new Notification(title, {
@@ -145,8 +154,6 @@ $body-bg: #242222;
 $settings-btn-bg: darkgray;
 
 :root {
-  --grid-columns: auto-fit 1fr 1fr;
-  --grid-rows: 0.2fr 0.5fr;
   --form-column: 1 / 4;
   --settings-column: 1 / 4;
 }
@@ -162,9 +169,6 @@ body {
 .container-grid {
   text-align: center;
   display: grid;
-  grid-template-columns: var(--grid-columns);
-  grid-template-rows: var(--grid-rows);
-  // grid-gap: 10px;
   padding: 10% 3% 6%;
   background-image: url("./assets/digital_clock.svg");
   background-repeat: no-repeat;
@@ -173,23 +177,28 @@ body {
   margin: 0 1%;
 }
 
+@media screen and (min-width: 1000px) {
+  .container-grid {
+    transform: scale(0.7);
+  }
+}
+
+.statistic {
+  color: darkgray;
+  font-size: 24px;
+  span {
+    font-weight: bold;
+  }
+}
+
 .form {
-  // grid-column: var(--form-column);
   grid-column: 2;
   .btn {
     border-radius: 5px;
     margin: 0 1.5vw 0 1.5vw;
     border: 0;
     width: 3vw;
-  }
-  .btn.start_btn {
-    background-color: #64c264;
-  }
-  .btn.stop_btn {
-    background-color: #e35c5c;
-  }
-  .btn.clear_btn {
-    background-color: #cece5e;
+    background-color: darkgray;
   }
 }
 
