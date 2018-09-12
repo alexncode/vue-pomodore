@@ -1,8 +1,6 @@
 .DS_Store
 node_modules
 /dist
-../package-lock.json
-/src/assets/digital-7*.ttf
 
 # local env files
 .env.local
