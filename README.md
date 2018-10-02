@@ -1,5 +1,6 @@
 # vue-pomidore
 A simple implementation of Pomodoro Technique timers made with Vue.js
+[Live Demo](https://romantic-borg-f2ea0a.netlify.com/)
 
 ## Project setup
 ```
